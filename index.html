@@ -430,7 +430,7 @@ src="https://www.facebook.com/tr?id=636556544378384&ev=PageView&noscript=1"/></n
 
 <script>
 // Troque pelo link do seu checkout (Phoenix OS / Mercado Pago)
-const CHECKOUT_URL = "";
+const CHECKOUT_URL = "https://pay.wiapy.com/gQS9D0WjHcQZ";
 
 // Pixel: marca o clique nos botões de compra como início de checkout
 document.querySelectorAll(".js-checkout").forEach(a => a.addEventListener("click", () => {
@@ -438,7 +438,7 @@ document.querySelectorAll(".js-checkout").forEach(a => a.addEventListener("click
 }));
 
 if (CHECKOUT_URL) {
-  document.querySelectorAll(".js-checkout").forEach(a => { a.href = CHECKOUT_URL; a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll(".js-checkout").forEach(a => { a.href = CHECKOUT_URL; });
 }
 
 const LUZ = {
