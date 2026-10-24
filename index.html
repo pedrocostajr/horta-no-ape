@@ -175,7 +175,23 @@ footer{padding-block:28px;font-size:13px;color:var(--suave);text-align:center}
 <meta property="og:image" content="img/produto.png">
 <meta property="og:type" content="website">
 <link rel="icon" href="img/produto.png">
-<!-- Cole aqui o código do Pixel da Meta -->
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '636556544378384');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name: 'Horta no Apê', value: 22.00, currency: 'BRL'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=636556544378384&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -415,6 +431,11 @@ footer{padding-block:28px;font-size:13px;color:var(--suave);text-align:center}
 <script>
 // Troque pelo link do seu checkout (Phoenix OS / Mercado Pago)
 const CHECKOUT_URL = "";
+
+// Pixel: marca o clique nos botões de compra como início de checkout
+document.querySelectorAll(".js-checkout").forEach(a => a.addEventListener("click", () => {
+  if (window.fbq) fbq("track", "InitiateCheckout", {content_name: "Horta no Apê", value: 22.00, currency: "BRL"});
+}));
 
 if (CHECKOUT_URL) {
   document.querySelectorAll(".js-checkout").forEach(a => { a.href = CHECKOUT_URL; a.target = "_blank"; a.rel = "noopener"; });
