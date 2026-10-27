@@ -150,14 +150,29 @@ h2{font-size:clamp(28px,4.2vw,40px);color:var(--tinta);margin-bottom:18px}
 footer{padding-block:28px;font-size:13px;color:var(--suave);text-align:center}
 
 /* barra fixa mobile */
-.barra{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;background:var(--mata);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -6px 20px rgba(0,0,0,.2)}
+.barra.escondida{transform:translateY(110%)}
+.barra{transition:transform .25s;position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;background:var(--mata);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -6px 20px rgba(0,0,0,.2)}
 .barra span{color:var(--sobre-mata);font-size:15px;line-height:1.2}
 .barra span b{font-family:var(--display);font-size:20px;color:var(--sol);display:block}
 .barra a{background:var(--sol);color:#2A2108;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;font-size:16px;white-space:nowrap}
 
+
+.hero-lista{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
+.hero-lista li{display:flex;gap:10px;align-items:flex-start;font-size:17px;font-weight:500;color:var(--sobre-mata)}
+.hero-lista li svg{flex-shrink:0;margin-top:3px}
+.hero-preco{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin-bottom:18px;color:var(--sobre-mata2);font-size:15px}
+.hero-preco b{font-family:var(--display);font-size:40px;color:var(--sol);line-height:1}
+.hero .lead{margin-bottom:20px}
 @media (max-width:860px){
   .hero-grid,.jn-grid{grid-template-columns:1fr}
-  .hero-grid .livro-wrap{order:-1;max-width:260px;margin:0 auto}
+  .hero{padding-block:28px 48px}
+  .hero-grid{gap:28px}
+  .hero h1{font-size:32px;margin-bottom:12px}
+  .hero .lead{font-size:17px;margin-bottom:16px}
+  .hero-lista{margin-bottom:18px}
+  .hero-lista li{font-size:16px}
+  .hero-grid .livro-wrap{max-width:220px;margin:0 auto}
+  .faixa{font-size:13px}
   .dor .tres{grid-template-columns:1fr}
   .capitulos{grid-template-columns:1fr}
   .paginas{grid-template-columns:repeat(2,1fr)}
@@ -196,15 +211,21 @@ src="https://www.facebook.com/tr?id=636556544378384&ev=PageView&noscript=1"/></n
 <body>
 
 
-<div class="faixa"><div class="wrap">Guia digital · acesso imediato no seu e-mail depois da compra</div></div>
+<div class="faixa"><div class="wrap">Acesso imediato · Pix ou cartão · 7 dias de garantia</div></div>
 
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow" style="color:var(--sol)">Horta em apartamento</div>
-      <h1>Tempero fresco colhido <em>na sua janela</em>, mesmo morando em apartamento</h1>
-      <p class="lead">O guia que mostra o que plantar no tipo de luz que a sua janela recebe, como montar vasos baratos e quais erros fazem a planta morrer. Escrito pra quem nunca plantou nada.</p>
-      <a class="cta js-checkout" href="#oferta">Quero montar minha horta<small>R$ 22 · pagamento único</small></a>
+      <h1>Monte sua horta <em>na janela</em> e colha tempero fresco em 30 dias</h1>
+      <p class="lead">Mesmo em apartamento, sem varanda e sem nunca ter plantado nada.</p>
+      <ul class="hero-lista">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sol)" stroke-width="2.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg> O que plantar na luz que a sua janela recebe</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sol)" stroke-width="2.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Vasos baratos, até de garrafa PET</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sol)" stroke-width="2.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Os 7 erros que fazem a planta morrer</li>
+      </ul>
+      <div class="hero-preco"><span class="de">Guia completo em PDF</span><b>R$ 22</b><span class="de">pagamento único</span></div>
+      <a class="cta js-checkout" href="#oferta">Quero montar minha horta<small>Receba no e-mail em minutos</small></a>
       <div class="selos">
         <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--folha)" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Acesso imediato</span>
         <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--folha)" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Pix ou cartão</span>
@@ -463,6 +484,13 @@ function mostra(k){
 }
 btns.forEach(b => b.addEventListener("click", () => mostra(b.dataset.k)));
 mostra("meia");
+
+// Barra fixa do celular: só aparece depois que o botão do topo sai da tela
+const barra = document.querySelector(".barra"), heroCta = document.querySelector(".hero .cta");
+if (barra && heroCta && "IntersectionObserver" in window) {
+  barra.classList.add("escondida");
+  new IntersectionObserver(([e]) => barra.classList.toggle("escondida", e.isIntersecting || e.boundingClientRect.top > 0)).observe(heroCta);
+}
 </script>
 
 </body>
